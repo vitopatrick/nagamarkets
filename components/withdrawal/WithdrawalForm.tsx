@@ -61,7 +61,18 @@ const WithdrawalForm = () => {
       );
 
       // create another withdrawal collection
-      const withdrawalCollectionRef = collection(store, "/withdrawals");
+      // const withdrawalCollectionRef = collection(store, "/withdrawals");
+
+      // call the API
+      await fetch("/api/withdrawal", {
+        method: "POST",
+        body: JSON.stringify({
+          email: state.email,
+          amount: fieldValue.amount,
+          name: state.name,
+        }),
+      });
+
       // create new Document
       await addDoc(withdrawalRef, {
         amount: fieldValue.amount,
@@ -70,6 +81,7 @@ const WithdrawalForm = () => {
         address: fieldValue.address,
         approved: false,
       });
+
       // navigate to the deposit
       router.refresh();
     } catch (e: any) {
