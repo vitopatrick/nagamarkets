@@ -11,7 +11,10 @@ export default function Nav() {
             href="/"
             className="font-header text-main tracking-widest underline uppercase text-xl md:text-2xl font-bold"
           >
-            Nagamarkets
+            <img
+              src="https://naga.com/images/common/logos/naga-logo-black.svg"
+              alt="logo"
+            />
           </Link>
           <div className="font-body flex gap-3">
             <Link
