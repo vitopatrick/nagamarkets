@@ -261,7 +261,7 @@ const BarCodeModal = ({ coin, show, close }: any) => {
           <div className=" p-4 my-5">
             <Md.MdClose onClick={() => close(false)} size={30} color="#fff" />
           </div>
-          <img src={coin?.img} />
+          <img src={""} />
         </div>
       </motion.section>
     </AnimatePresence>
